@@ -12,7 +12,7 @@ public class ProductController {
 
 
 
-	@Autowired ProductService productService;
+/*	@Autowired ProductService productService;
 
 
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
@@ -49,7 +49,7 @@ public class ProductController {
 	public String delete(@PathVariable Integer id) {
 		productService.deleteProduct(id);
 		return "redirect:/products";
-	}
+	}*/
 /*
 	@RequestMapping(value = "userbuprofile", method = RequestMethod.POST)
 	public String saveUser(UserBuProfile userBuProfile) {

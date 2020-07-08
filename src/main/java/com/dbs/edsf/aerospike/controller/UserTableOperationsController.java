@@ -18,8 +18,8 @@ public class UserTableOperationsController {
     UserTableOperationsService userTableOperationsService;
     UserTblOpertn userTblOpertn = new UserTblOpertn();
 
-    @RequestMapping(value = "savetableprofilecol", method = RequestMethod.GET)
-    public UserTblOpertn saveUser(@RequestParam(name = "table_profile") String user_table,
+    @RequestMapping(value = "saveuserrlfoperations", method = RequestMethod.GET)
+    public UserTblOpertn saveUser(@RequestParam(name = "user_table") String user_table,
                                   @RequestParam(name = "rlf") String rlf, @RequestParam(name = "operations") String operations ) {
         List<String> rlf_lst = Arrays.asList(rlf.split(","));
         List<String> operations_lst = Arrays.asList(operations.split(","));
@@ -30,17 +30,17 @@ public class UserTableOperationsController {
     }
 
 
-    @RequestMapping(value = "gettableprofilecol/{table_profile}", method = RequestMethod.GET)
-    public UserTblOpertn getBUProfileByUser(@PathVariable String table_profile) {
-        UserTblOpertn uto = userTableOperationsService.getUserTableRlfOperations(table_profile);
+    @RequestMapping(value = "getuserrlfoperations/{user_table}", method = RequestMethod.GET)
+    public UserTblOpertn getBUProfileByUser(@PathVariable String user_table) {
+        UserTblOpertn uto = userTableOperationsService.getUserTableRlfOperations(user_table);
         //String profile = ubp.getBuprofile().get("CBG");
         return uto;
     }
 
-    @RequestMapping(value = "deletetableprofilecol/{table_profile}", method = RequestMethod.GET)
-    public String deleteBUProfileByUser(@PathVariable String table_profile) {
-        userTableOperationsService.deleteUserTableRlfOperations(table_profile);
+    @RequestMapping(value = "deleteuserrlfoperations/{user_table}", method = RequestMethod.GET)
+    public String deleteBUProfileByUser(@PathVariable String user_table) {
+        userTableOperationsService.deleteUserTableRlfOperations(user_table);
         //String profile = ubp.getBuprofile().get("CBG");
-        return "deleted " + table_profile;
+        return "deleted " + user_table;
     }
 }

@@ -24,7 +24,7 @@ public class TblProfileCol {
         return coludf;
     }
 
-    public void setColudf(String coludf) {
+    public void setColudf(HashMap<String, String> coludf) {
         this.coludf = coludf;
     }
 
